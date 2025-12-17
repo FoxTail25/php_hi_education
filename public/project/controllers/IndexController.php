@@ -4,7 +4,8 @@
 	
 	class IndexController extends Controller	{
 		public function hi()	{
-			echo '1111';
+			// echo 'Hello Pasha from PHP';
+			return $this->render('index/hello');
 		}
 	}
 ?>

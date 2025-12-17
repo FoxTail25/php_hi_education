@@ -6,7 +6,10 @@
 	{
 		public function notFound() {
 			$this->title = 'Page not found';
+
+			$this->layout = 'notfound';
 			
 			return $this->render('error/notFound');
+			// echo "not found";
 		}
 	}
