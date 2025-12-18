@@ -5,6 +5,7 @@ use Core\Route;
 return [
         
     new Route('/', 'index', 'hi'),
-    new Route('/my-page1/', 'page', 'show1'),
-    new Route('/my-page2/', 'page', 'show2'),
+    new Route('/json/', 'json', 'intro'),
+    new Route('/json/data_in_json/', 'json', 'data_in_json'),
+    new Route('/json/obj_in_json/', 'json', 'obj_in_json'),
 ];
