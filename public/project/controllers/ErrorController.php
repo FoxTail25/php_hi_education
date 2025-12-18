@@ -10,6 +10,5 @@
 			$this->layout = 'notfound';
 			
 			return $this->render('error/notFound');
-			// echo "not found";
 		}
 	}
