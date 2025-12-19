@@ -3,11 +3,13 @@
 	<head>
 		<html lang="ru">
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="/project/webroot/style.css"/>
+		<link rel="stylesheet" href="/project/webroot/style_default.css"/>
 		<title><?= $title ?></title>
 	<body>
 		<header>
-			хедер сайта
+			<h2>
+				Конспект по изучению PHP
+			</h2>
 		</header>
 		<div class="container">
 			<aside class="sidebar left">
