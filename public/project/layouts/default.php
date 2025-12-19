@@ -18,9 +18,9 @@
 			<main>
 				<?= $content ?>
 			</main>
-			<aside class="sidebar right">
+			<!-- <aside class="sidebar right">
 				правый сайдбар
-			</aside>
+			</aside> -->
 		</div>
 		<footer>
 			футер сайта
