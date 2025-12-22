@@ -13,10 +13,16 @@
 		</header>
 		<div class="container">
 			<aside class="sidebar left">
-				левый сайдбар
+				<!-- левый сайдбар -->
+				 Навигация
+				<?php
+					include('parts/left_menu.php');
+				?>
 			</aside>
 			<main>
-				<?= $content ?>
+				<div class="content">
+					<?= $content ?>
+				</div>
 			</main>
 			<!-- <aside class="sidebar right">
 				правый сайдбар
