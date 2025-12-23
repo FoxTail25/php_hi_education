@@ -50,6 +50,6 @@
 	echo $func();
 ?>
 <div class="navigate_arrow">
-	<a href="/function/anonim_func/">Назад</a>
-	<a href="/function/anonim_func_get_outer_var/">Вперёд</a>
+	<a href="/function/1_anonim_func/">Назад</a>
+	<a href="/function/3_anonim_func_get_outer_var/">Вперёд</a>
 </div>

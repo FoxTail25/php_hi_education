@@ -4,7 +4,7 @@
 	
 	class FunctionController extends Controller	{
 		public function test($params) {
-			$name = substr($params['theme'],0,-4);
+			$name = $params['theme'];
 			return $this->render("function/$name");
 		}
 	}
