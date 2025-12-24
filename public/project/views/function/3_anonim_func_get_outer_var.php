@@ -63,3 +63,7 @@
 		
 		echo $func();
 	?>
+<div class="navigate_arrow">
+	<a href="/function/2_external_var_anonim_func/">Назад</a>
+	<a href="/function/4_change_outer_var/">Вперёд</a>
+</div>
