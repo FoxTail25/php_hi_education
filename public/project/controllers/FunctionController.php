@@ -3,7 +3,8 @@
 	use \Core\Controller;
 	
 	class FunctionController extends Controller	{
-		public function test($params) {
+		
+		public function getPage($params) {
 			$name = $params['theme'];
 			return $this->render("function/$name");
 		}
