@@ -35,31 +35,32 @@
 		?&rsaquo;
 	</pre>
 </code>
-<h3>Задача</h3>
-<p>
-	<i>
-		Исправьте код, чтобы он заработал задуманным образом:
-	</i>
-</p>
-<code>
-	<pre>
-		&lsaquo;?php
-			$num1 = 2;
-			$num2 = 3;
-			
-			$func = function() use ($num1, $num2)
-			{
-				$num1 = $num1 ** 2;
-				$num2 = $num2 ** 2;
-			};
-			
-			$func();
-			echo $num1;
-			echo $num2;
-		?&rsaquo;
-	</pre>
-</code>
 <div class="task">
+	<h3>Задача</h3>
+	<p>
+		<i>
+			Исправьте код, чтобы он заработал задуманным образом:
+		</i>
+	</p>
+	<code>
+		<pre>
+			&lsaquo;?php
+				$num1 = 2;
+				$num2 = 3;
+				
+				$func = function() use ($num1, $num2)
+				{
+					$num1 = $num1 ** 2;
+					$num2 = $num2 ** 2;
+				};
+				
+				$func();
+				echo $num1;
+				echo $num2;
+			?&rsaquo;
+		</pre>
+	</code>
+
 	<h4>Решение:</h4>
 	<code>
 		<pre>

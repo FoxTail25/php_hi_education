@@ -35,6 +35,8 @@ class Menu {
 
 			// Читае в массив имена файлов в указанном каталоге. Отсекаем первые 2 элемента массива.
 			$files = (array_slice(scandir($dir),2));
+			$files = $this->sortedMenuArr($files);
+			// var_dump(sort($files));
 			$resultArr = [];
 
 			// пробекаем по именам файлов, вытаскивая первую строчку каждого файла.
@@ -59,6 +61,16 @@ class Menu {
 				$resultArr []= ["/function/$linkName/",$first_line];
 			}
 			return $resultArr;
+	}
+	public function sortedMenuArr($menuArr){
+		$sortedMenuArr =[];
+		foreach($menuArr as $menuItem){
+			$reg ='#\d*#';
+			preg_match($reg, $menuItem, $menuNum);
+			$sortedMenuArr [$menuNum[0]]= $menuItem;
+		}
+		ksort($sortedMenuArr);
+		return $sortedMenuArr;
 	}
 
 	public function __toString(){
