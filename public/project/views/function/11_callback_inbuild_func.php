@@ -183,5 +183,5 @@
 </div>
 <div class="navigate_arrow">
 	<a href="/function/10_callbask/">Назад</a>
-	<a href="/function/11/">Вперёд</a>
+	<a href="/json/0_intro/">Вперёд</a>
 </div>

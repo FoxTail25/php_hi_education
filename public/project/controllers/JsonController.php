@@ -6,7 +6,7 @@
 		
 		public function getPage($params) {
 			$name = $params['theme'];
-			return $this->render("function/$name");
+			return $this->render("json/$name");
 		}
 	}
 ?>

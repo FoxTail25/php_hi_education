@@ -14,7 +14,6 @@
 		<div class="container">
 			<aside class="sidebar left">
 				<!-- левый сайдбар -->
-				 Навигация
 				<?php
 					include('parts/left_menu.php');
 				?>

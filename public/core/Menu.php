@@ -58,7 +58,7 @@ class Menu {
 					$first_line = "Не удалось открыть файл.";
 				}
 				$linkName = substr($name, 0, -4);
-				$resultArr []= ["/function/$linkName/",$first_line];
+				$resultArr []= ["/$menuDir/$linkName/",$first_line];
 			}
 			return $resultArr;
 	}
