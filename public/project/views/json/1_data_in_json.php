@@ -28,7 +28,11 @@
 			$data = [1, 2, 3];
 			$json = json_encode($data);
 			var_dump($json); // выведет: <?=var_dump(json_encode([1, 2, 3]))?>
-			
 		?&rsaquo;
 	</pre>
 </code>
+
+<div class="navigate_arrow">
+	<a href="/json/0_intro/">Назад</a>
+	<a href="/json/2_json_in_data/">Вперёд</a>
+</div>
