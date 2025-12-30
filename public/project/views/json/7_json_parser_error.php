@@ -153,5 +153,5 @@
 </div>
 <div class="navigate_arrow">
 	<a href="/json/6_incorrect_json/">Назад</a>
-	<a href="/json/8/">Вперёд</a>
+	<a href="/xml/0_intro/">Вперёд</a>
 </div>
