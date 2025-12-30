@@ -5,6 +5,7 @@
 		use Core\Menu;
 		echo (new Menu)->createMenu('function', 'Функции');
 		echo (new Menu)->createMenu('json', 'JSON');
+		echo (new Menu)->createMenu('xml', 'XML');
 	?>
 	
 
