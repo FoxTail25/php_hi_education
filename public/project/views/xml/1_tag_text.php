@@ -88,5 +88,5 @@
 </div>
 <div class="navigate_arrow">
 	<a href="/xml/0_intro/">Назад</a>
-	<a href="/xml/2/">Вперёд</a>
+	<a href="/xml/2_tag_group_texts/">Вперёд</a>
 </div>
