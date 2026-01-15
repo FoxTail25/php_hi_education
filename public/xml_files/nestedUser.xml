@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+	<user>
+		<name>
+		john
+		</name>
+		<surn>
+		smit
+		</surn>
+	</user>
+	<user>
+		<name>
+		eric
+		</name>
+		<surn>
+		wils
+		</surn>
+	</user>
+	<user>
+		<name>
+		kyle
+		</name>
+		<surn>
+		tayl
+		</surn>
+	</user>
+</root>

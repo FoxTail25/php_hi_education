@@ -8,4 +8,5 @@ return [
     new Route('/json/:theme', 'json', 'getPage'),
     new Route('/function/:theme', 'function', 'getPage'),
     new Route('/xml/:theme', 'xml', 'getPage'),
+    new Route('/curl/:theme', 'curl', 'getPage'),
 ];

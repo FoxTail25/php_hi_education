@@ -43,10 +43,10 @@
 		<pre>
 			//file: user.xml
 
-			&lsaquo;xml version="1.0"&rsaquo;
-			&lsaquo;root&rsaquo;
+			&lsaquo;xml version="1.0">
+			&lsaquo;root>
 				&lsaquo;user age="23" salary="1000">john&lsaquo;/user>
-			&lsaquo;/root&rsaquo;
+			&lsaquo;/root>
 		</pre>
 	</code>
 	<p>
