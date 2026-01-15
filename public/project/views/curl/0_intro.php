@@ -17,3 +17,51 @@
 <p>
 	Давайте посмотрим на минимально необходимые настройки (что они делают читайте в комментариях):
 </p>
+<code>
+	<pre>
+	&lsaquo;?php
+		// Адрес страницы для обращения:
+		$url = 'http://test.loc';
+		
+		// Инициализируем сеанс:
+		$curl = curl_init();
+		
+		// Указываем адрес страницы:
+		curl_setopt($curl, CURLOPT_URL, $url);
+		
+		// Выполняем запрос:
+		curl_exec($curl);
+	?&rsaquo;
+	</pre>
+</code>
+<div class="task">
+	<h3>Задача</h3>
+	<p>
+		<i>
+			Сделайте у себя на локалке сайт test.loc. Обратитесь к нему через CURL.
+		</i>
+	</p>
+	
+	<h4>Решение:</h4>
+	<code>
+		<pre>
+			&lsaquo;?php
+				$url = 'http://test.loc';
+				$curl = curl_init();
+				curl_setopt($curl, CURLOPT_URL, $url);	
+				curl_exec($curl);
+			?>
+		</pre>
+	</code>
+	<h4>Результат:</h4>
+	<?php
+	$url = 'http://test.loc';
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_URL, $url);	
+	curl_exec($curl);
+	?>		
+</div>
+<div class="navigate_arrow">
+	<a href="/xml/7_hypen_name/">Назад</a>
+	<a href="/curl/1_reply-variable/">Вперёд</a>
+</div>
