@@ -125,6 +125,6 @@
 	?>		
 </div>
 <div class="navigate_arrow">
-	<a href="/xml/1_tag_text/">Назад</a>
-	<a href="/xml/3_redirect-following/">Вперёд</a>
+	<a href="/curl/1_tag_text/">Назад</a>
+	<a href="/curl/3_redirect-following/">Вперёд</a>
 </div>

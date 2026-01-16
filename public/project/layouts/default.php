@@ -8,7 +8,7 @@
 	<body>
 		<header>
 			<h2>
-				Конспект по изучению PHP
+				Конспект по углублённому изучению PHP
 			</h2>
 		</header>
 		<div class="container">

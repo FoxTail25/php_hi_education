@@ -1,40 +1,33 @@
-<h4>Переход по редиректам в CURL в PHP</h4>
+<h4>Имитация браузера через CURL в PHP</h4>
 <p>
-	Следующая команда заставляет CURL переходить по HTTP редиректам:
+	Следующая команда заставляет CURL имитировать браузер, отправляя заголовок User-Agent:
 </p>
 <code>
 	<pre>
 	&lsaquo;?php
-		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-	?>	
+		curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)');
+	?>
 	</pre>
 </code>
 <div class="task">
 	<h3>Задача</h3>
 	<p>
 		<i>
-			Даны две страницы:
+			При обращении к некоторому сайту выполните имитацию браузера.
 		</i>
 	</p>
-	<code>
-		<pre>
-			//page1.php
-		&lsaquo;?php
-			header('Location: page2.php');
-			die();
-		?>	
-			//page2.php
-		&lsaquo;?php
-			echo 'success';
-		?>		
-		</pre>
-	</code>
-	<p>
-		Обратитесь через CURL к первой странице. Убедитесь, что он проследует по редиректу при наличии соответствующей настройки.
-	</p>
+	
 	<h4>Решение:</h4>
 	<code>
 		<pre>
+		//test.loc/page3.php
+		&lsaquo;?php
+		echo 'page3&lsaquo;br/>';
+		echo $_SERVER['HTTP_USER_AGENT'];
+		?>
+
+
+
 		&lsaquo;?php
 		function siteToVar($link){
 			$link = 'https://'.$link;
@@ -42,39 +35,41 @@
 			curl_setopt($curl, CURLOPT_URL, $link);
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+			curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)');
+
 			$res = curl_exec($curl);
 			if($res){
 				return $res;
 			}
 			return curl_error($curl);
 		}
-		$siteLink = 'test.loc';
+		$siteLink = 'test.loc/page3.php';
 		var_dump(siteToVar($siteLink));
 		?>			
 		</pre>
 	</code>
-	
 	<h4>Результат:</h4>
-	<?php
-
+		<?php
+		
 		function siteToVar($link){
 			$link = 'https://'.$link;
 			$curl = curl_init();
 			curl_setopt($curl, CURLOPT_URL, $link);
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+			curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)');
+
 			$res = curl_exec($curl);
 			if($res){
 				return $res;
 			}
 			return curl_error($curl);
 		}
-		$siteLink = 'test.loc';
+		$siteLink = 'test.loc/page3.php';
 		var_dump(siteToVar($siteLink));
-
-	?>		
+		?>		
 </div>
 <div class="navigate_arrow">
-	<a href="/curl/2_err-check/">Назад</a>
-	<a href="/curl/4_https_enabl/">Вперёд</a>
+	<a href="/curl/4_https_enabl/">Назад</a>
+	<a href="/curl/6_data-method-post/">Вперёд</a>
 </div>
