@@ -46,6 +46,16 @@
 	</code>
 	<h4>Результат:</h4>
 	<?php
+		$link = 'https://test.loc/page-cookie-back.php';
+		$cookieFilePath = $_SERVER['DOCUMENT_ROOT'] . '/cookie.txt';
+
+		$curl = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $link);
+
+		curl_setopt($curl, CURLOPT_COOKIEFILE, $cookieFilePath);
+		curl_setopt($curl, CURLOPT_COOKIEJAR,  $cookieFilePath);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		echo curl_exec($curl);
 
 	?>		
 </div>
