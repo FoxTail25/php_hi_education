@@ -44,7 +44,7 @@
 	<h4>Решение:</h4>
 	<code>
 		<pre>
-			//test.loc/page_post1.php
+			// http://phphi.local/testloc/page-post1.php
 		&lsaquo;?php
 
 			if (!empty($_POST)) {
@@ -57,7 +57,7 @@
 	
 	
 		&lsaquo;?php
-		$link = 'https://test.loc/page_post1.php';
+		$link = 'http://phphi.local/testloc/page-post1/';
 		$data = ['field1'=>'value1', 'field2'=>'value2'];
 		
 		$curl = curl_init();
@@ -81,7 +81,7 @@
 	</code>
 	<h4>Результат:</h4>
 	<?php
-		$link = 'https://test.loc/page_post1.php';
+		$link = 'http://phphi.local/testloc/page-post1/';
 		
 		$data = 'field1=value1&field2=value2';
 		// $data = ['field1'=>'value1', 'field2'=>'value2'];
@@ -115,7 +115,7 @@
 	<h4>Решение:</h4>
 	<code>
 		<pre>
-			//test.loc/page_post2.php
+			// http://phphi.local/testloc/page-post2/
 		&lsaquo;?php
 
 			if (!empty($_POST)) {
@@ -126,7 +126,7 @@
 		?>
 		
 		&lsaquo;?php
-			$link = 'https://test.loc/page_post2.php';
+			$link = 'http://phphi.local/testloc/page-post2/';
 			$data = ['num1'=>'2', 'num2'=>'3'];
 			
 			$curl = curl_init();
@@ -142,7 +142,7 @@
 	</code>
 	<h4>Результат:</h4>
 	<?php
-		$link = 'https://test.loc/page_post2.php';
+		$link = 'http://phphi.local/testloc/page-post2/';
 		$data = ['num1'=>'2', 'num2'=>'3'];
 		
 		$curl = curl_init();
@@ -167,12 +167,12 @@
 	<h4>Решение:</h4>
 	<code>
 		<pre>
-			//test.loc/page2.php
+			// http://phphi.local/testloc/page1.php
 		&lsaquo;?php
-			echo "success";
+			cho 'hello world';
 		?>
 
-			//test.loc/page_post2.php
+			// http://phphi.local/testloc/page-post2.php
 		&lsaquo;?php
 
 			if (!empty($_POST)) {
@@ -183,8 +183,8 @@
 		?>
 		
 		&lsaquo;?php
-			$link1 = 'https://test.loc/page2.php';
-			$link2 = 'https://test.loc/page_post2.php';
+			$link1 = 'http://phphi.local/testloc/page1/';
+			$link2 = 'http://phphi.local/testloc/page-post2/';
 			$data = ['num1'=>'2', 'num2'=>'3'];
 
 			function curlPost($link, $postData = false) {
@@ -207,8 +207,8 @@
 	</code>
 	<h4>Результат:</h4>
 	<?php
-		$link1 = 'https://test.loc/page2.php';
-		$link2 = 'https://test.loc/page_post2.php';
+			$link1 = 'http://phphi.local/testloc/page1/';
+			$link2 = 'http://phphi.local/testloc/page-post2/';
 		$data = ['num1'=>'2', 'num2'=>'3'];
 
 		function curlPost($link, $postData = false) {

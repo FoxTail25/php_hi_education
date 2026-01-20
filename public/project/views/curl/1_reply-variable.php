@@ -49,7 +49,7 @@
 		&lsaquo;?php
 
 			function siteToVar($link){
-				$link = 'https://'.$link;
+				$link = 'http://'.$link;
 				$curl = curl_init();
 				curl_setopt($curl, CURLOPT_URL, $link);
 				curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -57,7 +57,7 @@
 
 				return $res;
 			}
-			$siteLink = 'test.loc';
+			$siteLink = 'phphi.local/testloc/page1/';
 			var_dump(siteToVar($siteLink));
 		?>	
 			
@@ -67,7 +67,7 @@
 	<?php
 
 		function siteToVar($link){
-			$link = 'https://'.$link;
+			$link = 'http://'.$link;
 			$curl = curl_init();
 			curl_setopt($curl, CURLOPT_URL, $link);
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -75,7 +75,7 @@
 
 			return $res;
 		}
-		$siteLink = 'test.loc';
+		$siteLink = 'phphi.local/testloc/page1/';
 		var_dump(siteToVar($siteLink));
 	?>		
 </div>

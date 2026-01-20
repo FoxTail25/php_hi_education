@@ -35,7 +35,7 @@
 	</p>
 	<code>
 		<pre>
-			//test.loc/page-qookie.php
+			// https://phphi.local/testloc/page-cookie.php
 			&lsaquo;?php
 				if (!empty($_COOKIE)) {
 					echo json_encode($_COOKIE);
@@ -50,7 +50,7 @@
 	<code>
 		<pre>
 		&lsaquo;?php
-			$link = 'https://test.loc/page-cookie.php';
+			$link = 'https://phphi.local/testloc/page-cookie/';
 			$cookie_d = 'name=john; login=admin';
 
 			function curlCookie($link, $cookieData = false) {
@@ -70,7 +70,7 @@
 	</code>
 	<h4>Результат:</h4>
 	<?php
-		$link = 'https://test.loc/page-cookie.php';
+		$link = 'https://phphi.local/testloc/page-cookie/';
 		$cookie_d = 'name=john; login=admin';
 
 		function curlCookie($link, $cookieData = false) {
@@ -96,10 +96,10 @@
 	</p>
 	<code>
 		<pre>
-			//test.loc/page-qookie.php
+			// http://phphi.local/testloc/page-qookie-num.php
 			&lsaquo;?php
 				if (!empty($_COOKIE)) {
-					echo json_encode($_COOKIE);
+					echo $_COOKIE['num1'] + $_COOKIE['num2'];
 				} else {
 					echo 'error';
 				}
@@ -111,7 +111,7 @@
 	<code>
 		<pre>
 		&lsaquo;?php
-			$link = 'https://test.loc/page-cookie-num.php';
+			$link = 'https://phphi.local/testloc/page-cookie-num/';
 			$cookie_d = 'num1=2; num2=5';
 
 			function curlCookie($link, $cookieData = false) {
@@ -131,7 +131,7 @@
 	</code>
 	<h4>Результат:</h4>
 	<?php
-		$link = 'https://test.loc/page-cookie-num.php';
+		$link = 'https://phphi.local/testloc/page-cookie-num/';
 		$cookie_d = 'num1=2; num2=5';
 
 

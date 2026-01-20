@@ -20,7 +20,7 @@
 	<h4>Решение:</h4>
 	<code>
 		<pre>
-		//test.loc/page3.php
+		// http://phphi.local/testloc/browser-imit.php
 		&lsaquo;?php
 		echo 'page3&lsaquo;br/>';
 		echo $_SERVER['HTTP_USER_AGENT'];
@@ -35,7 +35,7 @@
 			curl_setopt($curl, CURLOPT_URL, $link);
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-			curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)');
+			curl_setopt($curl, CURLOPT_USERAGENT, 'FoxTail curl test Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)');
 
 			$res = curl_exec($curl);
 			if($res){
@@ -43,7 +43,7 @@
 			}
 			return curl_error($curl);
 		}
-		$siteLink = 'test.loc/page3.php';
+		$siteLink = 'phphi.local/testloc/browser-imit/';
 		var_dump(siteToVar($siteLink));
 		?>			
 		</pre>
@@ -57,7 +57,7 @@
 			curl_setopt($curl, CURLOPT_URL, $link);
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
-			curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)');
+			curl_setopt($curl, CURLOPT_USERAGENT, 'FoxTail curl test Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)');
 
 			$res = curl_exec($curl);
 			if($res){
@@ -65,7 +65,7 @@
 			}
 			return curl_error($curl);
 		}
-		$siteLink = 'test.loc/page3.php';
+		$siteLink = 'phphi.local/testloc/browser-imit';
 		var_dump(siteToVar($siteLink));
 		?>		
 </div>

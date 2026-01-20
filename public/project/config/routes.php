@@ -9,4 +9,5 @@ return [
     new Route('/function/:theme', 'function', 'getPage'),
     new Route('/xml/:theme', 'xml', 'getPage'),
     new Route('/curl/:theme', 'curl', 'getPage'),
+    new Route('/testloc/:theme', 'testloc', 'getPage'),
 ];

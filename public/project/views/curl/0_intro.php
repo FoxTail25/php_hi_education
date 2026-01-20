@@ -43,10 +43,12 @@
 	</p>
 	
 	<h4>Решение:</h4>
+		<p><i><b>Изначально я так и сделал. Но позже, решил перенисти его внуть учебника. Создав дополнительный контроллер и отдельное представление</b></i></p>
 	<code>
 		<pre>
 			&lsaquo;?php
-				$url = 'http://test.loc';
+				// было так: $url = 'http://test.loc';
+				// стало так: $url = 'http://phphi.local/testloc/page1/';
 				$curl = curl_init();
 				curl_setopt($curl, CURLOPT_URL, $url);	
 				curl_exec($curl);
@@ -55,7 +57,8 @@
 	</code>
 	<h4>Результат:</h4>
 	<?php
-	$url = 'http://test.loc';
+	// $url = 'http://test.loc';
+	$url = 'http://phphi.local/testloc/page1/';
 	$curl = curl_init();
 	curl_setopt($curl, CURLOPT_URL, $url);	
 	curl_exec($curl);

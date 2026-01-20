@@ -18,14 +18,14 @@
 	</p>
 	<code>
 		<pre>
-			//page1.php
+			// http://phphi.local/testloc/redirect-out.php
 		&lsaquo;?php
-			header('Location: page2.php');
+			header('Location: http://phphi.local/testloc/redirect-in/');
 			die();
 		?>	
-			//page2.php
+			// http://phphi.local/testloc/redirect-in.php
 		&lsaquo;?php
-			echo 'success';
+			echo 'is it redirect-in page';
 		?>		
 		</pre>
 	</code>
@@ -40,15 +40,15 @@
 			$link = 'https://'.$link;
 			$curl = curl_init();
 			curl_setopt($curl, CURLOPT_URL, $link);
-			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 			$res = curl_exec($curl);
 			if($res){
 				return $res;
 			}
 			return curl_error($curl);
 		}
-		$siteLink = 'test.loc';
+		$siteLink = 'phphi.local/testloc/redirect-out.php';
 		var_dump(siteToVar($siteLink));
 		?>			
 		</pre>
@@ -58,18 +58,18 @@
 	<?php
 
 		function siteToVar($link){
-			$link = 'https://'.$link;
+			$link = 'http://'.$link;
 			$curl = curl_init();
 			curl_setopt($curl, CURLOPT_URL, $link);
-			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 			$res = curl_exec($curl);
 			if($res){
 				return $res;
 			}
 			return curl_error($curl);
 		}
-		$siteLink = 'test.loc';
+		$siteLink = 'phphi.local/testloc/redirect-out/';
 		var_dump(siteToVar($siteLink));
 
 	?>		

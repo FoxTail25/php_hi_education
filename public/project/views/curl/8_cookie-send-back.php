@@ -7,6 +7,7 @@
 </p>
 <code>
 	<pre>
+		// https://phphi.local/testloc/page-cookie-back.php
 	&lsaquo;?php
 		$cookieFilePath = $_SERVER['DOCUMENT_ROOT'] . '/cookie.txt';
 		
@@ -24,7 +25,7 @@
 	</p>
 	<code>
 		<pre>
-			//test.loc/page-qookie-back.php
+			// https://phphi.local/testloc/page-cookie-back
 			&lsaquo;?php
 				if (!empty($_COOKIE)) {
 					echo date('H:i:s', $_COOKIE['time']);
@@ -46,7 +47,7 @@
 	</code>
 	<h4>Результат:</h4>
 	<?php
-		$link = 'https://test.loc/page-cookie-back.php';
+		$link = 'https://phphi.local/testloc/page-cookie-back';
 		$cookieFilePath = $_SERVER['DOCUMENT_ROOT'] . '/cookie.txt';
 
 		$curl = curl_init();
@@ -58,4 +59,8 @@
 		echo curl_exec($curl);
 
 	?>		
+</div>
+<div class="navigate_arrow">
+	<a href="/curl/7_cookie-send/">Назад</a>
+	<a href="/curl/9_http-header/">Вперёд</a>
 </div>
