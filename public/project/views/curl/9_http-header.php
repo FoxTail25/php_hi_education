@@ -152,3 +152,7 @@
 		echo curkHeader($link, $headers_false);
 	?>		
 </div>
+<div class="navigate_arrow">
+	<a href="/curl/8_cookie-send-back/">Назад</a>
+	<a href="/api/0_intro/">Вперёд</a>
+</div>

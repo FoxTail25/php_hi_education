@@ -5,7 +5,7 @@ header, footer {
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
 }
 
@@ -15,18 +15,22 @@ body {
     width: 100%;
 
     aside {
-        max-width: 15vw;
+        position: fixed;
+        top: 0;
+        max-width: 20%;
+        height: 95%;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
     
     main {
+        padding-left: 20%;
+        max-width: 80%;
         flex: 1;
-        max-width: 1200px;
         margin: 0 auto;
-        /* padding-left: 20px; */
         .content {
             margin: 0 auto;
             width: 90%;
-
         }
         /* .theme_header{
             text-align: center;
@@ -44,4 +48,7 @@ body {
     border: 1px dashed black;
     padding: 20px;
     margin: 10px;
+    pre {
+        overflow-x: auto;
+    }
 }

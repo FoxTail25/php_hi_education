@@ -10,4 +10,5 @@ return [
     new Route('/xml/:theme', 'xml', 'getPage'),
     new Route('/curl/:theme', 'curl', 'getPage'),
     new Route('/testloc/:theme', 'testloc', 'getPage'),
+    new Route('/api/:theme', 'api', 'getPage'),
 ];
