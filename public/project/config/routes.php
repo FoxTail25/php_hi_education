@@ -11,4 +11,5 @@ return [
     new Route('/curl/:theme', 'curl', 'getPage'),
     new Route('/testloc/:theme', 'testloc', 'getPage'),
     new Route('/api/:theme', 'api', 'getPage'),
+    new Route('/testapi/:theme', 'testapi', 'getPage'),
 ];

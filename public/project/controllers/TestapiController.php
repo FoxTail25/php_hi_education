@@ -2,12 +2,12 @@
 	namespace Project\Controllers;
 	use \Core\Controller;
 	
-	class TestlocController extends Controller	{
+	class TestapiController extends Controller	{
 		
 		public function getPage($params) {
-			$this->layout = 'zero'; // пустой layout
 			$name = $params['theme'];
-			return $this->render("testloc/$name");
+			$this->layout = 'zero'; // пустой layout
+			return $this->render("testapi/$name");
 		}
 	}
 ?>
