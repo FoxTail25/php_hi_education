@@ -67,8 +67,9 @@
 	// обрабатываем запрос и отправляем ответ
 	function getWeekDay($dateString){
 		$dateArr = explode('-', $dateString);
-		$timestemp = mktime(0,0, $dateArr[1], $dateArr[0], $dateArr[2]);
-		return 'Сегодня ' .date('l', $timestemp).' - это '.normaliseDay(date('w', $timestemp)).' день недели' ;
+		$tm = mktime(0,0,0, $dateArr[1], $dateArr[2], $dateArr[0]);
+		return 'Сегодня '.date('d-m-Y', $tm).' - это '.date('l', $tm).' '.normaliseDay(date('w', $tm)).'й день недели' ;
+	}
 	}
 	function normaliseDay($num){
 	// меняем нулевой день недели на 7й
@@ -100,4 +101,8 @@
 
 	echo file_get_contents("http://phphi.local/testapi/get-week-day?year-month-day=$dateStr");
 	?>		
+</div>
+<div class="navigate_arrow">
+	<a href="/api/3_multi-url/">Назад</a>
+	<a href="/api/5_multi-get-parameters/">Вперёд</a>
 </div>
