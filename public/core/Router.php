@@ -5,6 +5,14 @@
 	{
 		public function getTrack($routes, $uri)
 		{
+			if(str_contains($uri,'?')){
+				/*
+				проверяем строку на наличии "?" (т.е. GET-запроса)
+				если он есть, то отрезаем его и всё что после
+				*/
+				$uri = stristr($uri, '?', true);
+			}
+
 			foreach ($routes as $route) {
 				$pattern = $this->createPattern($route->path); // see method description
 				

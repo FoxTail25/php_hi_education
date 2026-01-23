@@ -61,3 +61,7 @@
 	echo file_get_contents('http://phphi.local/testapi/timetest/');
 	?>		
 </div>
+<div class="navigate_arrow">
+	<a href="/api/1_preparing/">Назад</a>
+	<a href="/api/3_multi-url/">Вперёд</a>
+</div>
