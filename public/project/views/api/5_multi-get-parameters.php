@@ -36,10 +36,20 @@
 	<p>
 		Пишем API в файле get-day-diff.php
 	</p>
-		<code>
+	<code>
 		<pre>
 &lsaquo;?php
-
+	if(isset($_GET['date-start']) && isset($_GET['date-finish'])){
+		echo getDateDiff($_GET['date-start'], $_GET['date-finish']);
+	} else {
+		echo 'error';
+	}
+	function getDateDiff($dateStr1, $dateStr2){
+		$date1 = date_create($dateStr1);
+		$date2 = date_create($dateStr2);
+		$dateDiff = date_diff($date1, $date2);
+		return $dateDiff->format('%a дней');
+	}
 ?>	
 		</pre>
 	</code>	
@@ -49,22 +59,90 @@
 	<code>
 		<pre>
 &lsaquo;?php
-	$dateStr = date('Y-m-d');
-
-	echo file_get_contents("http://phphi.local/testapi/get-day-diff?date-stert=1&date-finish=2");
-	
+	$dateStart = date('Y-m-d', mktime(0,0,0, 01,20,2026));
+	$dateFinish = date('Y-m-d');
+	echo file_get_contents("http://phphi.local/testapi/get-day-diff?date-start=$dateStart&date-finish=$dateFinish");
 ?>	
 		</pre>
 	</code>
 
 	<h4>Результат:</h4>
-	<?php
+<?php
 	$dateStart = date('Y-m-d', mktime(0,0,0, 01,20,2026));
 	$dateFinish = date('Y-m-d');
 	echo file_get_contents("http://phphi.local/testapi/get-day-diff?date-start=$dateStart&date-finish=$dateFinish");
-	?>		
+?>		
 </div>
+
+<div class="task">
+	<h3>Задача</h3>
+	<p>
+		<i>
+			Модифицируйте предыдущую задачу так, чтобы выполнялась проверка на корректность формата даты.
+		</i>
+	</p>
+
+
+	<h4>Решение:</h4>
+
+	<p>
+		Пишем API в файле get-day-diff.php
+	</p>
+	<code>
+		<pre>
+&lsaquo;?php
+	if(isset($_GET['date-start']) && isset($_GET['date-finish'])){
+		if(chekedInkomingDate($_GET['date-start']) && chekedInkomingDate($_GET['date-finish'])){
+			echo getDateDiff($_GET['date-start'], $_GET['date-finish']);
+		} else {
+			echo 'некоректная дата';
+		}
+	} else {
+		echo 'error';
+	}
+	function getDateDiff($dateStr1, $dateStr2){
+		$date1 = date_create($dateStr1);
+		$date2 = date_create($dateStr2);
+		$dateDiff = date_diff($date1, $date2);
+		return $dateDiff->format('%a дней');
+	}
+	function chekedInkomingDate($str){
+		$str = explode('-', $str);
+		return checkdate($str[1], $str[2], $str[0]);
+	}
+?>	
+		</pre>
+	</code>	
+	<p>
+		Отправляем запрос к созданному API c этой страницы:
+	</p>
+	<code>
+		<pre>
+&lsaquo;?php
+	$dateStart = '2026-01-31';
+	$dateFinish = date('Y-m-d');
+	echo file_get_contents("http://phphi.local/testapi/get-day-diff-check?date-start=$dateStart&date-finish=$dateFinish");
+		echo '&lsaquo;br/>';
+	$dateStart = '2026-01-32';
+	$dateFinish = date('Y-m-d');
+	echo file_get_contents("http://phphi.local/testapi/get-day-diff-check?date-start=$dateStart&date-finish=$dateFinish");
+?>	
+		</pre>
+	</code>
+
+	<h4>Результат:</h4>
+<?php
+	$dateStart = '2026-01-31';
+	$dateFinish = date('Y-m-d');
+	echo file_get_contents("http://phphi.local/testapi/get-day-diff-check?date-start=$dateStart&date-finish=$dateFinish");
+	echo '<br/>';
+	$dateStart = '2026-01-32';
+	$dateFinish = date('Y-m-d');
+	echo file_get_contents("http://phphi.local/testapi/get-day-diff-check?date-start=$dateStart&date-finish=$dateFinish");
+?>		
+</div>
+
 <div class="navigate_arrow">
 	<a href="/api/4_get-parameter/">Назад</a>
-	<a href="/api/6/">Вперёд</a>
+	<a href="/api/6_json/">Вперёд</a>
 </div>
