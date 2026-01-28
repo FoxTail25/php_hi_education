@@ -102,5 +102,5 @@
 </div>
 <div class="navigate_arrow">
 	<a href="/api/6_json/">Назад</a>
-	<a href="/api/8/">Вперёд</a>
+	<a href="/api/8_post-parameters-json/">Вперёд</a>
 </div>

@@ -2,6 +2,7 @@
 	namespace Project\Controllers;
 	use \Core\Controller;
 	
+	
 	class ApiController extends Controller	{
 		
 		public function getPage($params) {

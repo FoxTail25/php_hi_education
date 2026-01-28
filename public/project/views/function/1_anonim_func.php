@@ -51,5 +51,5 @@
 ?>
 <div>
 	<a href="/function/">Назад</a>
-	<a href="/function/external_var_anonim_func/">Вперёд</a>
+	<a href="/function/2_external_var_anonim_func/">Вперёд</a>
 </div>
