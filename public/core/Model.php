@@ -5,8 +5,7 @@
 	{
 		private static $link;
 		
-		public function __construct()
-		{
+		public function __construct() {
 			if (!self::$link) { // если свойство не задано, то подключаемся 
 				self::$link = mysqli_connect(DB_HOST, DB_USER, DB_PASS, 
 					DB_NAME); 
@@ -14,18 +13,21 @@
 			}
 		}
 		
-		protected function findOne($query)
-		{
+		protected function findOne($query) {
 			$result = mysqli_query(self::$link, $query) or die(mysqli_error(self::$link));
 			return mysqli_fetch_assoc($result);
 		}
 		
-		protected function findMany($query)
-		{
+		protected function findMany($query)	{
 			$result = mysqli_query(self::$link, $query) or die(mysqli_error(self::$link));
 			for ($data = []; $row = mysqli_fetch_assoc($result); $data[] = $row);
 			
 			return $data;
 		}
+		protected function addOne($query) {
+			$result = mysqli_query(self::$link, $query) or die(mysqli_error(self::$link));
+			return $result;
+		}
+
 	}
 ?>
