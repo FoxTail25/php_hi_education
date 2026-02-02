@@ -1,6 +1,6 @@
 <?php
-use \Project\Models\Crudcitiesapi;
-$crudApi = new Crudcitiesapi;
+use \Project\Models\Crudcitiesmodel;
+$crudApi = new Crudcitiesmodel;
 
 if(isset($_GET['action'])) {
 	$answer = '';
@@ -24,8 +24,14 @@ if(isset($_GET['action'])) {
 		$data = json_decode($_POST['jsondata'],true);
 		$cityName = $data['name'];
 		$countryId = $data['countryid'];
-		// $answer = "Город: $cityName ,страна: $countryId";
 		$answer = $crudApi->addCity($cityName, $countryId);
+		break;
+		
+		case 'update':
+		$data = json_decode($_POST['jsondata'],true);
+		$newCityName = $data['newCityName'];
+		$cityId = $data['cityId'];
+		$answer = $crudApi->updateCityById($newCityName, $cityId);
 		break;
 	}
 	echo $answer;

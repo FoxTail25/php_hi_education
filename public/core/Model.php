@@ -1,8 +1,7 @@
 <?php
 	namespace Core;
 	
-	class Model
-	{
+	class Model	{
 		private static $link;
 		
 		public function __construct() {
@@ -24,7 +23,7 @@
 			
 			return $data;
 		}
-		protected function addOne($query) {
+		protected function addOrDelOne($query) {
 			$result = mysqli_query(self::$link, $query) or die(mysqli_error(self::$link));
 			return $result;
 		}
