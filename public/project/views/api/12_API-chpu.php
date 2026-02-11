@@ -100,7 +100,10 @@
 	<h4>Результат:</h4>
 	<?php
     	
-    $res = file_get_contents("http://phphi.local/testapi/api_year/nametest");
+    $res = file_get_contents("http://phphi.local/leap/2025");
+    echo $res;
+    echo "<br/>";
+    $res = file_get_contents("http://phphi.local/diff/2025/2026");
     echo $res;
 
 	?>		

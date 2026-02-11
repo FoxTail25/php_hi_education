@@ -5,9 +5,28 @@
 	class TestapiController extends Controller	{
 		
 		public function getPage($params) {
-			$name = $params['theme'];			
 			$this->layout = 'zero'; // пустой layout
-			return $this->render("testapi/$name");
+
+			$name = $params['theme'];					
+			
+			return $this->render("testapichpu/$name");
+		}
+
+		public function getLeap($params) {
+			$this->layout = 'zero'; // пустой layout
+
+			$year = $params['year'];
+			
+			return $this->render("testapi/leap", ['year'=> $year]);
+		}
+		
+		public function getDiff($params) {
+			$this->layout = 'zero'; // пустой layout
+
+			$year1 = $params['year1'];
+			$year2 = $params['year2'];
+			
+			return $this->render("testapi/diff", ['year1'=> $year1, 'year2'=> $year2]);
 		}
 	}
 ?>
