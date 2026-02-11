@@ -12,4 +12,5 @@ return [
     new Route('/testloc/:theme', 'testloc', 'getPage'),
     new Route('/api/:theme', 'api', 'getPage'),
     new Route('/testapi/:theme', 'testapi', 'getPage'),
+    new Route('/testapichpu/:theme/:name', 'testapi', 'getPage'),
 ];
