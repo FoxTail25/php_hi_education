@@ -98,13 +98,29 @@
 	</code>
 
 	<h4>Результат:</h4>
+		<input id="leap_year_inp" type="number" min="1" max="<?=date('Y')+1000 ?>"/>
+		<button id="leap_form_btn">проверить на високосность</button>
+		<div id="answer"></div>
+	<script>
+		const inp = document.querySelector("#leap_year_inp");
+		const queryBtn = document.querySelector("#leap_form_btn");
+		const answerPlace = document.getElementById("answer");
+		queryBtn.addEventListener('click', ()=>{
+			fetch('http://phphi.local/leap/' + inp.value)
+			.then(response => response.text())
+			.then(data => {
+					if(data == 1){
+						answerPlace.innerText = 'високосный год';
+					} else {
+						answerPlace.innerText = 'не високосный год';
+					}
+				})
+		})
+	</script>
 	<?php
-    	
-    $res = file_get_contents("http://phphi.local/leap/2025");
-    echo $res;
-    echo "<br/>";
-    $res = file_get_contents("http://phphi.local/diff/2025/2026");
-    echo $res;
+
+    // $res = file_get_contents("http://phphi.local/diff/2025/2026");
+    // echo $res;
 
 	?>		
 </div>
