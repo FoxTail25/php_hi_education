@@ -63,21 +63,50 @@
 	<h4>Решение:</h4>
 
 	<p>
-        Реализуем эту задачу внутри нашего конспекта.
+        Реализуем эту задачу внутри нашего конспекта. Для этого вместо ЧПУ будем использвать наш паттерн MVC. Первое что нам необходимо сделать, это добавить 2 новых метода в файл контроллера project\controllers\TestapiController.php
 	</p>
     <p>
-
+		Теперь он будет выглядеть вот так:
     </p>
 
 	<code>
 		<pre>
 &lsaquo;?php
+	namespace Project\Controllers;
+	use \Core\Controller;
+	
+	class TestapiController extends Controller	{
+		
+		public function getPage($params) {
+			$this->layout = 'zero'; // пустой layout
 
+			$name = $params['theme'];					
+			
+			return $this->render("testapichpu/$name");
+		}
+
+		public function getLeap($params) {
+			$this->layout = 'zero'; // пустой layout
+
+			$year = $params['year'];
+			
+			return $this->render("testapi/leap", ['year'=> $year]);
+		}
+		
+		public function getDiff($params) {
+			$this->layout = 'zero'; // пустой layout
+
+			$year1 = $params['year1'];
+			$year2 = $params['year2'];
+			
+			return $this->render("testapi/diff", ['year1'=> $year1, 'year2'=> $year2]);
+		}
+	}
 ?>	
 		</pre>
 	</code>	
 	<p>
-		Теперь в файле project\views\testapi\tokenapipostheaderBdTen.php модернизируем локику проверки токена.
+		Теперь вносим коррективы в файл 
 	</p>
 	<code>
 		<pre>
