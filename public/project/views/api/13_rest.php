@@ -153,6 +153,43 @@
 
 	<h4>Результат:</h4>
 	<?php
+		function setCurl($link, $method, $data = false){
+			$url = $link;
+			$curl = curl_init();
 
+			curl_setopt($curl, CURLOPT_URL, $url);
+			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($curl, CURLOPT_POST, 1);
+			if($data) {
+				$productInfo = ['data'=> json_encode($data)];
+				curl_setopt($curl, CURLOPT_POSTFIELDS, $productInfo);
+			}
+
+			$headers = [
+				"X-HTTP-METHOD: $method" // ВАЖНО!! Отправляем заголовок "X-HTTP-METHOD", в запросе он будет: "HTTP_X_HTTP_METHOD"!!!!
+			];
+			curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+			
+			return curl_exec($curl);
+		}
+		// echo "добавляем продукт<br/>";
+		// echo setCurl('http://phphi.local/i-store/product/', 'POST', ['name'=> 'product7', 'quantity'=> '7', 'price'=> 700]).'<br/>';
+		echo "смотрим все продукты<br/>";
+		$allProduct = setCurl('http://phphi.local/i-store/products/', 'GET');
+		echo $allProduct.'<br/>';
+		echo "смотрим продукт с id = 1<br/>";
+		echo setCurl('http://phphi.local/i-store/product/1/', 'GET').'<br/>';
+		echo "изменяем продукт с id = 1<br/>";
+		echo setCurl('http://phphi.local/i-store/product/1/', 'PUT', ['name'=> 'product5', 'quantity'=> '5', 'price'=> 500]).'<br/>';
+		echo "смотрим продукт с id = 1<br/>";
+		echo setCurl('http://phphi.local/i-store/product/1/', 'GET').'<br/>';
+		echo "изменяем продукт с id = 1<br/>";
+		echo setCurl('http://phphi.local/i-store/product/1/', 'PUT', ['name'=> 'product1', 'quantity'=> '1', 'price'=> 100]).'<br/>';
+		echo "смотрим продукт с id = 1<br/>";
+		echo setCurl('http://phphi.local/i-store/product/1/', 'GET').'<br/>';
+		$allProduct = json_decode($allProduct,true);
+		$lastProd = array_pop($allProduct);
+		var_dump($lastProd['id']);
+		// echo setCurl('http://phphi.local/i-store/product/3/', 'DELETE').'<br/>';
 	?>		
 </div>
