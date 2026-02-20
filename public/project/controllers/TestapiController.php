@@ -9,7 +9,7 @@
 
 			$name = $params['theme'];					
 			
-			return $this->render("testapichpu/$name");
+			return $this->render("testapi/$name");
 		}
 
 		public function getLeap($params) {

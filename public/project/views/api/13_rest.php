@@ -393,5 +393,5 @@ echo createList($allProduct);
 </div>
 <div class="navigate_arrow">
 	<a href="/api/12_API-chpu/">Назад</a>
-	<a href="/api/13_/">Вперёд</a>
+	<a href="/api/14_using/">Вперёд</a>
 </div>
