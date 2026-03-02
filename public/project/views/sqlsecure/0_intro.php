@@ -7,5 +7,5 @@
 </p>
 <div class="navigate_arrow">
 	<a href="/api/14_using/">Назад</a>
-	<a href="/sqlsecure/1">Вперёд</a>
+	<a href="/sqlsecure/1_prepare">Вперёд</a>
 </div>
