@@ -296,6 +296,6 @@ function getUserLPsec($login, $pass){
 </div>
 
 <div class="navigate_arrow">
-	<a href="/sqlsecure/3_quotes/">Назад</a>
-	<a href="/sqlsecure/5_number_param_inject/">Вперёд</a>
+	<a href="/sqlsecure/4_string-param-injection/">Назад</a>
+	<a href="/sqlsecure/6/">Вперёд</a>
 </div>
