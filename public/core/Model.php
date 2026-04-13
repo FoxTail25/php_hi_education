@@ -27,6 +27,14 @@
 			$result = mysqli_query(self::$link, $query) or die(mysqli_error(self::$link));
 			return $result;
 		}
+		protected function query($link, $query){
+			$res = mysqli_query($link, $query);
+			
+			if (!$res and MODE === 'dev') {
+			return 	die(mysqli_error($link));
+			}
+			return $res;
+		}
 
 	}
 ?>

@@ -3,8 +3,14 @@
 	
 	use Project\Model\Mtest;
 	
-	error_reporting(E_ALL);
-	ini_set('display_errors', 'on');
+	require_once('config.php');
+	if(MODE == "dev") {
+		error_reporting(E_ALL);
+		ini_set('display_errors', 'on');
+	} else {
+		error_reporting(0);
+		ini_set('display_errors', 'off');
+	}
 
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/project/config/connection.php';
 	
@@ -29,7 +35,6 @@ spl_autoload_register(function($class) {
 		}
 	});
 	
-
 	$routes = require($_SERVER['DOCUMENT_ROOT'] . '/project/config/routes.php');
 
 	$router = new Router();

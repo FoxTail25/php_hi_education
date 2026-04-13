@@ -26,6 +26,7 @@
 	define('MODE', 'prod'); // dev или prod
 ?>
     </pre>
+    <span style="color:red;">// Файл config.php можно добавить в корень сайта. И загружаеть через файл index.php с помощью команды require_once('config.php');</span><br/><br/>
     Будем показывать ошибку только в режиме разработки:
     <pre>
 &lt;?php
@@ -45,7 +46,7 @@
 		$res = mysqli_query($link, $query);
 		
 		if (!$res and MODE === 'dev') {
-			die(mysqli_error($link))
+			die(mysqli_error($link));
 		}
 	}
 ?>
@@ -56,5 +57,55 @@
 	query($link, 'SELECT * FROM users');
 ?>
     </pre> 
-
 </p>
+<div class="task">
+    <h3>Задача</h3>
+    Реализуйте описанное переключение режима. Потестируйте его.
+    <h4>Решение:</h4>
+    <pre>
+        1) создаём файл в корне проекта и называем его config.php
+        2) прописываем в нём следующий код:
+        &lt;?php
+	        define('MODE', 'dev'); // dev или prod
+        ?>
+        3) в файл index.php (в корне сайта) добавляем следующий код:
+        require_once('config.php');
+        if(MODE == "dev") {
+            error_reporting(E_ALL);
+            ini_set('display_errors', 'on');
+        } else {
+            error_reporting(0);
+            ini_set('display_errors', 'off');
+        }
+
+    </pre>
+    <pre>
+<?php
+echo "MEDE: ".MODE."<br/><br/>";
+    // $link = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+	// $query = "SELECT * FROM sec_user WHERE id = 1";
+	// $res = query($link, $query);
+
+    // function query($link, $query) {
+	// 	$res = mysqli_query($link, $query);
+		
+	// 	if (!$res and MODE === 'dev') {
+    //             // return die(mysqli_error($link));
+    //         return 'ошибка SQL запроса';
+    //     }
+    //     if($res) {
+    //         return mysqli_fetch_assoc($res);
+    //     } else {
+    //             return null;
+    //     }
+ 
+	// }
+
+    // var_dump($res);
+?>
+    </pre>
+</div>
+<div class="navigate_arrow">
+	<a href="/sqlsecure/5_number_param_inject/">Назад</a>
+	<a href="/sqlsecure/7_value-changing/">Вперёд</a>
+</div>
