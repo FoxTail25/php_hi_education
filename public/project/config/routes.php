@@ -12,6 +12,7 @@ return [
     new Route('/testloc/:theme', 'testloc', 'getPage'),
     new Route('/api/:theme', 'api', 'getPage'),
     new Route('/sqlsecure/:theme', 'sqlsecure', 'getPage'),
+    new Route('/pdo/:theme', 'pdo', 'getPage'),
     new Route('/testapi/:theme', 'testapi', 'getPage'),
     new Route('/leap/:year', 'testapi', 'getLeap'),
     new Route('/diff/:year1/:year2', 'testapi', 'getDiff'),

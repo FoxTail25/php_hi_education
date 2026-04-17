@@ -1,3 +1,3 @@
 <?php
-	define('MODE', 'prod'); // dev или prod
+	define('MODE', 'dev'); // dev или prod
 ?>

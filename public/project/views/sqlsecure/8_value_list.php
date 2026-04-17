@@ -124,6 +124,6 @@
     </pre>
 </div>
 <div class="navigate_arrow">
-	<a href="/sqlsecure/6_error_hide/">Назад</a>
-	<a href="/sqlsecure/8_value_list/">Вперёд</a>
+	<a href="/sqlsecure/7_value-changing/">Назад</a>
+	<a href="/pdo/0_intro/">Вперёд</a>
 </div>
