@@ -138,6 +138,6 @@
     ?>
 </div>
 <div class="navigate_arrow">
-	<a href="/sqlsecure/0_intro/">Назад</a>
+	<a href="/pdo/0_intro/">Назад</a>
 	<a href="/pdo/2_pdo_connect/">Вперёд</a>
 </div>
