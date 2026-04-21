@@ -98,7 +98,7 @@
             $noData = true;
             while ($row = $res->fetch()) {
                 echo $row['name'].': '.$row['age'].': '.$row['salary'].'<br/>';
-                $noData = false;
+                if($noData) $noData = false;
             }
             if($noData){
                 echo 'данных соответствующих запросу нет.<br/>';
