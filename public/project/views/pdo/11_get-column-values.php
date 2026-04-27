@@ -85,3 +85,7 @@
 
     ?>
 </div>
+<div class="navigate_arrow">
+	<a href="/pdo/10_named-values-binding/">Назад</a>
+	<a href="/pdo/12_result-all-rows/">Вперёд</a>
+</div>
